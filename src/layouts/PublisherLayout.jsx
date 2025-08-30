@@ -8,19 +8,19 @@ function PublisherLayout() {
   return (
     <div className="flex flex-col h-screen">
       {/* Header top full width */}
-      <div>
+      <div className="relative ">
         <Header />
       </div>
 
       {/* Sidebar + Page Content */}
-      <div className="flex flex-1">
+      <div className="flex flex-1 ">
         {/* Sidebar */}
-        <div >
+        <div className="flex-shrink-0">
           <Sidebar />
         </div>
 
         {/* Page Content */}
-        <div className="p-14">
+        <div className="flex-1 overflow-y-auto p-14">
           <Outlet />
         </div>
       </div>

@@ -56,34 +56,37 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React from "react";
 import PublisherLayout from "../layouts/PublisherLayout";
 
-// Pages (dummy bana lo test ke liye)
+// Pages
 import Websites from "../pages/publisher/websites/Websites";
 import Sales from "../pages/publisher/sales/Sales";
-import Promotions from "../pages/publisher//promotions/Promotions";
+import Promotions from "../pages/publisher/promotions/Promotions";
 import Wallet from "../pages/publisher/wallet/Wallet";
 import Contact from "../pages/publisher/contact/Contact";
-import  Home  from "../pages/publisher/home/Home";
-
+import Home from "../pages/publisher/home/Home";
+import ConfirmOnship from "../pages/publisher/confirmOS/ConfirmOnship";
+import DescriptionPricePage from "../pages/publisher/descriptionPricePage/DescriptionPricePage";
+import EarnSuccessPage from "../pages/publisher/earnSuccessPage/EarnSuccessPage";
 
 const Routing = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Publisher Layout Wrap */}
+        {/* Publisher routes wrapped in PublisherLayout */}
         <Route path="/publisher" element={<PublisherLayout />}>
+          <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="websites" element={<Websites />} />
           <Route path="sales" element={<Sales />} />
           <Route path="promotions" element={<Promotions />} />
           <Route path="wallet" element={<Wallet />} />
           <Route path="contact" element={<Contact />} />
-
-          {/* Agar /publisher khali hit ho to /publisher/home pe bhejo */}
-          <Route index element={<Navigate to="home" />} />
+          <Route path="confirmOwnership" element={<ConfirmOnship />} />
+          <Route path="DescriptionPrice" element={<DescriptionPricePage />} />
+          <Route path="earn" element={<EarnSuccessPage />} />
         </Route>
-
-        {/* Agar kuch aur hit ho to publisher/home pe redirect */}
-        <Route path="*" element={<Navigate to="/publisher/home" />} />
+        
+        {/* Redirect root to publisher */}
+        <Route path="*" element={<Navigate to="/publisher" />} />
       </Routes>
     </BrowserRouter>
   );
