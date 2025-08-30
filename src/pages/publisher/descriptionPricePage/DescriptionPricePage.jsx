@@ -63,32 +63,31 @@ const DescriptionPricePage = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-4xl mx-auto">
-        {/* Progress Bar */}
-        <div className="mb-8">
+        <div className="mb-16">
           <div className="flex items-center justify-between mb-4">
             <div className="text-center">
-              <div className="text-sm font-medium text-gray-700 mb-2">Add your Website</div>
+              <div className="text-lg font-medium text-gray-700 mb-2">Add your Website</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-medium text-gray-700 mb-2">Confirm your Ownership</div>
+              <div className="text-lg font-medium text-gray-700 mb-2">Confirm your Ownership</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-medium text-gray-700 mb-2">Description and price</div>
+              <div className="text-lg font-medium text-gray-700 mb-2">Description and price</div>
             </div>
             <div className="text-center">
-              <div className="text-sm font-medium text-gray-700 mb-2">Earn</div>
+              <div className="text-lg font-medium text-gray-700 mb-2">Earn</div>
             </div>
           </div>
           
           <div className="relative">
             <div className="flex items-center">
-              <div className="w-4 h-4 rounded-full bg-orange-400 z-10 relative" />
-              <div className="flex-1 h-0.5 bg-orange-400" />
-              <div className="w-4 h-4 rounded-full bg-orange-400 z-10 relative" />
-              <div className="flex-1 h-0.5 bg-orange-400" />
-              <div className="w-4 h-4 rounded-full bg-orange-400 z-10 relative" />
-              <div className="flex-1 h-0.5 bg-gray-300" />
-              <div className="w-4 h-4 rounded-full bg-gray-300 z-10 relative" />
+              <div className="w-5 h-5 rounded-full bg-orange-400 z-10 relative" />
+              <div className="flex-1 h-1 bg-orange-400" />
+              <div className="w-5 h-5 rounded-full bg-orange-400 z-10 relative" />
+              <div className="flex-1 h-1 bg-orange-400" />
+              <div className="w-5 h-5 rounded-full bg-orange-400 z-10 relative" />
+              <div className="flex-1 h-1 bg-gray-300" />
+              <div className="w-5 h-5 rounded-full bg-gray-300 z-10 relative" />
             </div>
           </div>
         </div>
