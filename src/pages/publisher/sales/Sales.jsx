@@ -154,7 +154,7 @@ const Sales = () => {
       return (
         <button
           onClick={() => handleSubmitFeedback(item.id)}
-          className="px-4 py-1.5 text-sm border border-red-400 text-red-500 rounded-md hover:bg-red-50 transition-colors font-medium"
+          className="px-4 py-1.5 text-sm border border-[#df6e52] text-red-500 rounded-md hover:bg-red-50 transition-colors font-medium"
         >
           Submit Feedback
         </button>
@@ -177,7 +177,7 @@ const Sales = () => {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white border=[#df6e52] ">
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">

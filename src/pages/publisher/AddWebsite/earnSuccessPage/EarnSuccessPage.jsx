@@ -1,5 +1,5 @@
 import React from 'react';
-import sucbage from "../../../assets/images/successIocn.svg"
+import sucbage from "../../../../assets/images/successIocn.svg"
 const EarnSuccessPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">

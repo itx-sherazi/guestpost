@@ -62,10 +62,11 @@ import Sales from "../pages/publisher/sales/Sales";
 import Promotions from "../pages/publisher/promotions/Promotions";
 import Wallet from "../pages/publisher/wallet/Wallet";
 import Contact from "../pages/publisher/contact/Contact";
-import Home from "../pages/publisher/home/Home";
-import ConfirmOnship from "../pages/publisher/confirmOS/ConfirmOnship";
-import DescriptionPricePage from "../pages/publisher/descriptionPricePage/DescriptionPricePage";
-import EarnSuccessPage from "../pages/publisher/earnSuccessPage/EarnSuccessPage";
+import Home from "../pages/publisher/Home/Home";
+import ConfirmOnship from "../pages/publisher/AddWebsite/confirmOS/ConfirmOnship";
+import DescriptionPricePage from "../pages/publisher/AddWebsite/descriptionPricePage/DescriptionPricePage";
+import EarnSuccessPage from "../pages/publisher/AddWebsite/earnSuccessPage/EarnSuccessPage";
+import Addwebsite from "../pages/publisher/AddWebsite/Addwebsite";
 
 const Routing = () => {
   return (
@@ -74,8 +75,9 @@ const Routing = () => {
         {/* Publisher routes wrapped in PublisherLayout */}
         <Route path="/publisher" element={<PublisherLayout />}>
           <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
+          <Route path="home" element={<Home/>} />
           <Route path="websites" element={<Websites />} />
+          <Route path="addweb" element={<Addwebsite />} />
           <Route path="sales" element={<Sales />} />
           <Route path="promotions" element={<Promotions />} />
           <Route path="wallet" element={<Wallet />} />

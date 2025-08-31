@@ -1,381 +1,274 @@
-import React, { useState } from 'react';
-import { Star, CheckCircle, Pause, Edit, Trash2, Shield } from 'lucide-react';
+import React from 'react';
+import { Heart, Pause, Edit, Trash2, CheckCircle } from 'lucide-react';
 
 const Websites = () => {
-  // Dummy data array (replace with API data when ready)
-  const [websites, setWebsites] = useState([
+  const freelancers = [
     {
       id: 1,
-      name: 'www.website.com',
-      reviews: 20,
-      rating: 5,
+      website: "www.website.com",
+      reviews: "20 Reviews",
       verified: true,
-      status: 'Active',
-      prices: {
-        article: 170,
-        copywriting: 170,
-        sensitive: 170
-      },
-      orders: {
-        requested: 1,
-        inProgress: 2,
-        published: 6
-      },
-      quality: {
-        speed: '7 Days',
-        indexing: 'Found',
-        availability: 'Yes'
-      },
+      services: [
+        { name: "Article Price", price: "$170" },
+        { name: "Copywriting Price", price: "$170" },
+        { name: "Sensitive Topic", price: "$170" }
+      ],
+      orders: [
+        { status: "Requested", count: 1 },
+        { status: "In Progress", count: 2 },
+        { status: "Published", count: 6 }
+      ],
+      quality: [
+        { metric: "Speed", value: "7 Days", color: "text-orange-500" },
+        { metric: "Indexing", value: "Found", color: "text-orange-500" },
+        { metric: "Availability", value: "Yes", color: "text-[#df6e52]" }
+      ],
       finances: {
-        earned: 10.78,
-        expected: 34.98
-      }
+        earned: "$10.78",
+        expected: "$34.98"
+      },
+      status: "active",
+      statusIcon: "heart"
     },
     {
       id: 2,
-      name: 'www.website.com',
-      reviews: 20,
-      rating: 5,
+      website: "www.website.com",
+      reviews: "20 Reviews",
       verified: true,
-      status: 'Active',
-      prices: {
-        article: 170,
-        copywriting: 170,
-        sensitive: 170
-      },
-      orders: {
-        requested: 1,
-        inProgress: 2,
-        published: 6
-      },
-      quality: {
-        speed: '7 Days',
-        indexing: 'Found',
-        availability: 'Yes'
-      },
+      services: [
+        { name: "Article Price", price: "$170" },
+        { name: "Copywriting Price", price: "$170" },
+        { name: "Sensitive Topic", price: "$170" }
+      ],
+      orders: [
+        { status: "Requested", count: 1 },
+        { status: "In Progress", count: 2 },
+        { status: "Published", count: 6 }
+      ],
+      quality: [
+        { metric: "Speed", value: "7 Days", color: "text-orange-500" },
+        { metric: "Indexing", value: "Found", color: "text-orange-500" },
+        { metric: "Availability", value: "Yes", color: "text-[#df6e52]" }
+      ],
       finances: {
-        earned: 10.78,
-        expected: 34.98
-      }
+        earned: "$10.78",
+        expected: "$34.98"
+      },
+      status: "active",
+      statusIcon: "heart"
     },
     {
       id: 3,
-      name: 'www.website.com',
-      reviews: 20,
-      rating: 5,
+      website: "www.website.com",
+      reviews: "20 Reviews",
       verified: true,
-      status: 'Under Review',
-      prices: {
-        article: 170,
-        copywriting: 170,
-        sensitive: 170
-      },
-      orders: {
-        requested: 1,
-        inProgress: 2,
-        published: 6
-      },
-      quality: {
-        speed: '0 Days',
-        indexing: 'Not Found',
-        availability: 'Yes'
-      },
+      services: [
+        { name: "Article Price", price: "$170" },
+        { name: "Copywriting Price", price: "$170" },
+        { name: "Sensitive Topic", price: "$170" }
+      ],
+      orders: [
+        { status: "Requested", count: 1 },
+        { status: "In Progress", count: 2 },
+        { status: "Published", count: 6 }
+      ],
+      quality: [
+        { metric: "Speed", value: "0 Days", color: "text-blue-500" },
+        { metric: "Indexing", value: "Not Found", color: "text-blue-500" },
+        { metric: "Availability", value: "Yes", color: "text-[#df6e52]" }
+      ],
       finances: {
-        earned: 0.00,
-        expected: 0.00
-      }
+        earned: "$0.00",
+        expected: "$0.00"
+      },
+      status: "under-review",
+      statusIcon: "check"
     },
     {
       id: 4,
-      name: 'www.website.com',
-      reviews: 20,
-      rating: 5,
+      website: "www.website.com",
+      reviews: "20 Reviews",
       verified: true,
-      status: 'Active',
-      prices: {
-        article: 170,
-        copywriting: 170,
-        sensitive: 170
-      },
-      orders: {
-        requested: 1,
-        inProgress: 2,
-        published: 6
-      },
-      quality: {
-        speed: '7 Days',
-        indexing: 'Found',
-        availability: 'Yes'
-      },
+      services: [
+        { name: "Article Price", price: "$170" },
+        { name: "Copywriting Price", price: "$170" },
+        { name: "Sensitive Topic", price: "$170" }
+      ],
+      orders: [
+        { status: "Requested", count: 1 },
+        { status: "In Progress", count: 2 },
+        { status: "Published", count: 6 }
+      ],
+      quality: [
+        { metric: "Speed", value: "7 Days", color: "text-orange-500" },
+        { metric: "Indexing", value: "Found", color: "text-[#df6e52]" },
+        { metric: "Availability", value: "Yes", color: "text-[#df6e52]" }
+      ],
       finances: {
-        earned: 10.78,
-        expected: 34.98
-      }
+        earned: "$10.78",
+        expected: "$34.98"
+      },
+      status: "active",
+      statusIcon: "heart"
     }
-  ]);
+  ];
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 77;
-
-  // Function to get status color
   const getStatusColor = (status) => {
-    switch(status) {
-      case 'Active': return 'bg-green-100 text-green-800';
-      case 'Under Review': return 'bg-yellow-100 text-yellow-800';
-      case 'Pause': return 'bg-gray-100 text-gray-800';
-      default: return 'bg-gray-100 text-gray-800';
+    switch (status) {
+      case "active":
+        return "bg-white";
+      case "under-review":
+        return "bg-[#df6e52]";
+      default:
+        return "bg-white";
     }
   };
 
-  // Function to get status icon
-  const getStatusIcon = (status) => {
-    switch(status) {
-      case 'Active': return <CheckCircle className="w-4 h-4" />;
-      case 'Under Review': return <Shield className="w-4 h-4" />;
-      case 'Pause': return <Pause className="w-4 h-4" />;
-      default: return <CheckCircle className="w-4 h-4" />;
+  const getActionButtons = (status) => {
+    if (status === "under-review") {
+      return [
+        { icon: <CheckCircle size={16} />, text: "Under Review", bg: "bg-yellow-500" },
+        { icon: <Pause size={16} />, text: "Pause", bg: "bg-[#4955a3]" },
+        { icon: <Edit size={16} />, text: "Edit", bg: "bg-[#4955a3]" },
+        { icon: <Trash2 size={16} />, text: "Delete", bg: "bg-[#4955a3]" }
+      ];
+    } else {
+      return [
+        { icon: <Heart size={16} />, text: "Active", bg: "bg-[#df6e52]" },
+        { icon: <Pause size={16} />, text: "Pause", bg: "bg-[#df6e52]" },
+        { icon: <Edit size={16} />, text: "Edit", bg: "bg-[#df6e52]" },
+        { icon: <Trash2 size={16} />, text: "Delete", bg: "bg-[#df6e52]" }
+      ];
     }
-  };
-
-  // Function to render stars
-  const renderStars = (rating) => {
-    return Array(5).fill(0).map((_, i) => (
-      <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-    ));
-  };
-
-  // Action buttons component
-  const ActionButtons = ({ website }) => (
-    <div className="flex flex-col gap-2">
-      <button className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium ${getStatusColor(website.status)}`}>
-        {getStatusIcon(website.status)}
-        {website.status}
-      </button>
-      <button className="flex items-center gap-2 px-3 py-2 bg-orange-100 text-orange-800 rounded-lg text-sm font-medium hover:bg-orange-200">
-        <Pause className="w-4 h-4" />
-        Pause
-      </button>
-      <button className="flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-200">
-        <Edit className="w-4 h-4" />
-        Edit
-      </button>
-      <button className="flex items-center gap-2 px-3 py-2 bg-red-100 text-red-800 rounded-lg text-sm font-medium hover:bg-red-200">
-        <Trash2 className="w-4 h-4" />
-        Delete
-      </button>
-    </div>
-  );
-
-  // Pagination component
-  const Pagination = () => {
-    const pageNumbers = [1, 2, 3, 4, 5];
-    
-    return (
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex items-center gap-2">
-          {pageNumbers.map(num => (
-            <button
-              key={num}
-              onClick={() => setCurrentPage(num)}
-              className={`w-10 h-10 rounded-lg font-medium ${
-                currentPage === num 
-                  ? 'bg-orange-400 text-white' 
-                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
-              }`}
-            >
-              {num}
-            </button>
-          ))}
-          <span className="text-gray-500 mx-2">...</span>
-          <button className="w-10 h-10 rounded-lg font-medium bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
-            76
-          </button>
-          <button className="w-10 h-10 rounded-lg font-medium bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
-            77
-          </button>
-        </div>
-        
-        <button className="flex items-center gap-2 px-4 py-2 text-blue-600 hover:text-blue-800">
-          Next Page
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-    );
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Website Cards */}
-        <div className="space-y-4">
-          {websites.map((website) => (
-            <div 
-              key={website.id} 
-              className={`${
-                website.status === 'Under Review' 
-                  ? 'bg-orange-400 text-white' 
-                  : 'bg-white text-gray-800'
-              } rounded-lg p-6 shadow-sm`}
-            >
-              {/* Header Row */}
-              <div className="grid grid-cols-6 gap-6 mb-4">
-                <div className="font-semibold text-center">Name</div>
-                <div className="font-semibold text-center">Format and Pricing</div>
-                <div className="font-semibold text-center">Orders</div>
-                <div className="font-semibold text-center">Quality of Work</div>
-                <div className="font-semibold text-center">Finances</div>
-                <div className="font-semibold text-center">Actions</div>
+    <div className="p-6 bg-[#f3f3f9] min-h-screen">
+      {/* Header */}
+      <div className="bg-[#df6e52] text-white rounded-lg mb-4">
+        <div className="grid grid-cols-6 gap-4 px-6 py-4 text-sm font-medium">
+          <div>Name</div>
+          <div>Format and Pricing</div>
+          <div>Orders</div>
+          <div>Quality of Work</div>
+          <div>Finances</div>
+          <div>Actions</div>
+        </div>
+      </div>
+
+      {/* Table Content */}
+      <div className="space-y-4">
+        {freelancers.map((freelancer) => (
+          <div 
+            key={freelancer.id} 
+            className={`grid grid-cols-6 gap-4 px-6 py-6 rounded-lg ${getStatusColor(freelancer.status)} shadow mb-4`}
+          >
+            {/* Name Column */}
+            <div className="space-y-2">
+              <div className="font-medium text-gray-800">{freelancer.website}</div>
+              <div className="flex items-center space-x-2">
+                <div className="flex text-yellow-400">{'★'.repeat(5)}</div>
+                <span className="text-sm text-gray-600">{freelancer.reviews}</span>
               </div>
-
-              {/* Content Row */}
-              <div className="grid grid-cols-6 gap-6 items-start">
-                {/* Name Column */}
-                <div className="space-y-2">
-                  <div className="font-medium">{website.name}</div>
-                  <div className="flex items-center gap-1">
-                    {renderStars(website.rating)}
-                    <span className="text-sm ml-1">{website.reviews} Reviews</span>
-                  </div>
-                  {website.verified && (
-                    <div className="inline-flex items-center gap-1 px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">
-                      <CheckCircle className="w-3 h-3" />
-                      verified
-                    </div>
-                  )}
-                  {website.status === 'Under Review' && (
-                    <div className="inline-flex items-center gap-1 px-2 py-1 bg-yellow-400 text-black rounded-full text-xs">
-                      <Shield className="w-3 h-3" />
-                      under review
-                    </div>
-                  )}
+              <div className="flex items-center space-x-2 ">
+                <div className="w-4 h-4 bg-[#df6e52] rounded-full flex items-center justify-center">
+                  <CheckCircle size={12} className="text-white" />
                 </div>
-
-                {/* Format and Pricing Column */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Article Price</span>
-                    <span className={`font-medium ${website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600'}`}>
-                      ${website.prices.article}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Copywriting Price</span>
-                    <span className={`font-medium ${website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600'}`}>
-                      ${website.prices.copywriting}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sensitive Topic</span>
-                    <span className={`font-medium ${website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600'}`}>
-                      ${website.prices.sensitive}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Orders Column */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Requested</span>
-                    <span className="font-medium">{website.orders.requested}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>In Progress</span>
-                    <span className="font-medium">{website.orders.inProgress}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Published</span>
-                    <span className="font-medium">{website.orders.published}</span>
-                  </div>
-                </div>
-
-                {/* Quality Column */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Speed</span>
-                    <span className={`font-medium ${
-                      website.quality.speed === '0 Days' 
-                        ? (website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600')
-                        : (website.status === 'Under Review' ? 'text-red-200' : 'text-red-600')
-                    }`}>
-                      {website.quality.speed}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Indexing</span>
-                    <span className={`font-medium ${
-                      website.quality.indexing === 'Found'
-                        ? (website.status === 'Under Review' ? 'text-red-200' : 'text-red-600')
-                        : (website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600')
-                    }`}>
-                      {website.quality.indexing}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Availability</span>
-                    <span className={`font-medium ${
-                      website.quality.availability === 'Yes'
-                        ? (website.status === 'Under Review' ? 'text-red-200' : 'text-red-600')
-                        : (website.status === 'Under Review' ? 'text-blue-200' : 'text-blue-600')
-                    }`}>
-                      {website.quality.availability}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Finances Column */}
-                <div className="space-y-2 text-sm">
-                  <div className="text-center">
-                    <div>Earned</div>
-                    <div className={`font-medium text-lg ${
-                      website.status === 'Under Review' ? 'text-blue-200' : 'text-red-600'
-                    }`}>
-                      ${website.finances.earned}
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div>Expected</div>
-                    <div className={`font-medium text-lg ${
-                      website.status === 'Under Review' ? 'text-blue-200' : 'text-red-600'
-                    }`}>
-                      ${website.finances.expected}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Actions Column */}
-                <div>
-                  <ActionButtons website={website} />
-                </div>
+                <span className="text-sm text-gray-400">verified</span>
               </div>
             </div>
+
+            {/* Format and Pricing Column */}
+            <div className="space-y-2">
+              {freelancer.services.map((service, idx) => (
+                <div key={idx} className="flex justify-between items-center">
+                  <span className="text-sm text-gray-700">{service.name}</span>
+                  <span className="text-sm font-medium text-[#4955a3]">{service.price}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Orders Column */}
+            <div className="space-y-2">
+              {freelancer.orders.map((order, idx) => (
+                <div key={idx} className="flex justify-between items-center">
+                  <span className="text-sm text-gray-700">{order.status}</span>
+                  <span className="text-sm font-medium">{order.count}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Quality of Work Column */}
+            <div className="space-y-2">
+              {freelancer.quality.map((quality, idx) => (
+                <div key={idx} className="flex justify-between items-center">
+                  <span className="text-sm text-gray-700">{quality.metric}</span>
+                  <span className={`text-sm font-medium ${quality.color}`}>{quality.value}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Finances Column */}
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-700">Earned</span>
+                <span className="text-sm font-medium text-gray-800">{freelancer.finances.earned}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-700">Expected</span>
+                <span className="text-sm font-medium text-gray-500">{freelancer.finances.expected}</span>
+              </div>
+            </div>
+
+            {/* Actions Column */}
+            <div className="space-y-2">
+              {getActionButtons(freelancer.status).map((action, idx) => (
+                <div key={idx} className="flex items-center space-x-3">
+                  <div className={`${action.bg} text-white p-2 rounded flex items-center justify-center`}>
+                    {action.icon}
+                  </div>
+                  <span className={`text-sm font-medium ${freelancer.status === 'under-review' ? 'text-white' : 'text-gray-700'}`}>
+                    {action.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-end mt-6">
+        <div className="flex space-x-1">
+          {[1, 2, 3, 4, 5].map((page) => (
+            <button
+              key={page}
+              className={`w-8 h-8 rounded text-sm font-medium ${page === 1 ? 'bg-[#df6e52] text-white' : 'bg-white text-gray-700 border border-gray-300'}`}
+            >
+              {page}
+            </button>
+          ))}
+          <span className="text-gray-400 px-2">...</span>
+          {[76, 77].map((page) => (
+            <button
+              key={page}
+              className="w-8 h-8 rounded text-sm font-medium bg-[#df6e52] text-white"
+            >
+              {page}
+            </button>
           ))}
         </div>
+      </div>
 
-        {/* Pagination */}
-        <Pagination />
+      {/* Next Page Link */}
+      <div className="flex justify-center mt-4">
+        <button className="text-[#4955a3] text-sm font-medium flex items-center space-x-1">
+          <span>Next Page</span>
+          <span>→</span>
+        </button>
       </div>
     </div>
   );
 };
-
-// API integration ke liye ye function use karein (currently commented)
-/*
-const fetchWebsites = async () => {
-  try {
-    const response = await axios.get('/api/websites');
-    setWebsites(response.data);
-  } catch (error) {
-    console.error('Error fetching websites:', error);
-  }
-};
-
-// Component mount hone par API call karein
-useEffect(() => {
-  fetchWebsites();
-}, []);
-*/
 
 export default Websites;

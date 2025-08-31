@@ -19,17 +19,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
     console.log('Form submitted:', formData);
     alert('Form submitted successfully!');
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-0">
-      <div className="w-full h-full bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      {/* 🔹 bg-gray-100 instead of bg-white */}
+      <div className="w-full max-w-6xl bg-gray-100 rounded-2xl shadow-xl">
+        <div className="px-6 py-12 md:py-16">
           <form onSubmit={handleSubmit}>
-            <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Contact Us</h2>
             
             {/* First row: Full Name and Company Name */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -43,7 +42,7 @@ const Contact = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[#df6e52] rounded-md focus:outline-none focus:border-black"
                   required
                 />
               </div>
@@ -57,7 +56,7 @@ const Contact = () => {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[#df6e52] rounded-md focus:outline-none focus:border-black"
                 />
               </div>
             </div>
@@ -74,7 +73,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[#df6e52] rounded-md focus:outline-none focus:border-black"
                   required
                 />
               </div>
@@ -88,7 +87,7 @@ const Contact = () => {
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[#df6e52] rounded-md focus:outline-none focus:border-black"
                   required
                 />
               </div>
@@ -106,7 +105,7 @@ const Contact = () => {
                 onChange={handleChange}
                 rows={5}
                 placeholder="Type your message here......"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-[#df6e52] rounded-md focus:outline-none focus:border-black"
               ></textarea>
             </div>
 
@@ -114,7 +113,7 @@ const Contact = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="px-8 py-3 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-300 w-full md:w-auto md:px-12"
+                className="px-8 py-3 bg-[#df6e52] text-white font-medium rounded-md hover:bg-[#df6e52] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-300 w-full md:w-auto md:px-12"
               >
                 Submit
               </button>
